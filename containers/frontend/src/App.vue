@@ -31,18 +31,18 @@
       dark
       v-model="toogleMenu"      
     >
-      <pu-navigation />
+      <toogle-menu />
     </v-navigation-drawer>
   </v-app>
 </template>
 
 <script>
-import puNavigation from "@/components/Navigation";
+import ToogleMenu from "@/components/ToogleMenu";
 
 export default {
   name: "App",
-  components: {
-    puNavigation,
+  components: {    
+    ToogleMenu,
   },
   data: () => ({
     toogleMenu: false
