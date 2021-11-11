@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import ToogleMenu from "@/components/ToogleMenu";
+import ToogleMenu from "@/components/general/ToogleMenu";
 
 export default {
   name: "App",
-  components: {    
+  components: {
     ToogleMenu,
   },
   data: () => ({
