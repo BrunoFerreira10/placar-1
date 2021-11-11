@@ -57,7 +57,6 @@
   </v-app>
 </template>
 
-
 <script>
 import puNavigation from "@/components/Navigation";
 
@@ -87,53 +86,16 @@ export default {
 </script>
 
 <style>
-:root {
-  --pu-blue-1: #1c3640;
-  --pu-blue-2: #314759;
-  --pu-blue-3: #6c7780;
-  --pu-text-color-1: #a3b2bf;
-}
-
-.pu-text-color-1 {
-  color: var(--pu-text-color-1) !important;
-}
-
-.pu-bgcolor-1 {
-  background-color: var(--pu-blue-1) !important;
-}
-
-.pu-bgcolor-2 {
-  background-color: var(--pu-blue-2) !important;
-}
-
-.pu-bgcolor-3 {
-  background-color: var(--pu-blue-3) !important;
-}
 
 .pu-main-container {
   max-width: 100% !important;
 }
 
-.pu-component {
+.pu-view {
   background-color: #121212;
   height: 100%;
   width: 100%;
   max-width: 100% !important;
-}
-
-.pu-widget {
-  background-color: rgba(255, 255, 255, 0.08);
-  height: 100%;
-  width: 100%;  
-  
-}
-
-.container .vue-grid-item.vue-grid-placeholder {
-    background: #3f51b5;
-}
-
-.pu-widget h3 {
-  color: #fff;
 }
 
 </style>
