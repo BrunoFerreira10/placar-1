@@ -1,5 +1,5 @@
 <template >
-  <v-container class="pu-view ma-0">
+  <v-container class="pu-view ma-0 pa-0">
     <grid-layout
       id="pu-dashboard-grid"
       :layout.sync="layout"

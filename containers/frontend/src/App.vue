@@ -20,9 +20,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="pu-main-container fill-height pa-0 ma-0">
         <router-view></router-view>
-      </v-container>
     </v-main>
     
     <v-navigation-drawer
@@ -52,16 +50,11 @@ export default {
 
 <style>
 
-.pu-main-container {
-  width: 100%;
-  max-width: 100%;
-}
-
 .pu-view {
-  background-color: #121212;
   height: 100%;
   width: 100%;
-  max-width: 100%;
+  max-width: 100% !important;
+  background-color: #121212;  
 }
 
 </style>
