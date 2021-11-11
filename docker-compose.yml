@@ -4,7 +4,7 @@ services:
   frontend:
     # image: placar-ups_frontend:latest
     build:
-      context: ./containers/frontend/    
+      context: ./containers/frontend/ 
     container_name: placar-frontend
     ports: 
       - "8080:80"      
