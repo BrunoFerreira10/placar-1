@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app clipped-left dark>
-    <v-app-bar-nav-icon @click="toogleMenu = !toogleMenu">
+    <v-app-bar-nav-icon @click="toogleMenu">
       </v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ this.$route.name[1] }}</v-toolbar-title>
@@ -20,8 +20,15 @@
 </template>
 
 <script>
-export default {
+import eventbus from '@/eventbus.js'
 
+export default {
+  name: "MainHeader",
+  methods: {
+    toogleMenu() {
+      eventbus.toogleMenuEvent()
+    }
+  }
 }
 </script>
 

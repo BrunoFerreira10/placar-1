@@ -1,13 +1,13 @@
 export default {
   namespaced: true,
-  state: () => ({
-    
+  state: () => ({    
   }),
   mutations: {
     
   },
-  actions: {
+  actions: {    
   },
   getters: {
+    
   }
 }
