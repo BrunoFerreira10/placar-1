@@ -1,8 +1,9 @@
 <template >
-  <v-container class="pu-component ma-0">
-    <grid-layout 
+  <v-container class="pu-view ma-0 pa-0">
+    <grid-layout
+      id="pu-dashboard-grid"
       :layout.sync="layout"
-      :col-num="12"    
+      :col-num="12"
       :row-height="50"
       :is-draggable="true"
       :is-resizable="true"
@@ -10,7 +11,7 @@
       :margin="[10, 10]"
       :use-css-tranforms="true"
     >
-      <grid-item 
+      <grid-item
         v-for="item in layout"
         :key="item.i"
         :x="item.x"
@@ -18,9 +19,8 @@
         :w="item.w"
         :h="item.h"
         :i="item.i"
-      >    
-        <component :is="item.widget" ></component>  
-      
+      >
+        <component :is="item.widget"></component>
       </grid-item>
     </grid-layout>
   </v-container>
@@ -32,7 +32,6 @@ import BasicWidget1 from "@/components/widgets/BasicWidget1.vue";
 import BasicWidget2 from "@/components/widgets/BasicWidget2.vue";
 import BasicWidget3 from "@/components/widgets/BasicWidget3.vue";
 
-
 export default {
   components: {
     GridLayout: VueGridLayout.GridLayout,
@@ -43,79 +42,58 @@ export default {
   },
   data: () => ({
     layout: [
-      { x: 0, y: 0, w: 2, h: 2, i: "0", widget:"basic-widget", props:{title :"Bom dia"}, widget:'BasicWidget1' },
-      { x: 2, y: 2, w: 3, h: 3, i: "1", widget:"basic-widget", props:{title :"Bom dia"}, widget:'BasicWidget2' },
-      { x: 2, y: 2, w: 3, h: 3, i: "2", widget:"basic-widget", props:{title :"Bom dia"}, widget:'BasicWidget3' },
+      {
+        x: 0,
+        y: 0,
+        w: 2,
+        h: 2,
+        i: "0",
+        widget: "basic-widget",
+        props: { title: "Bom dia" },
+        widget: "BasicWidget1",
+      },
+      {
+        x: 2,
+        y: 2,
+        w: 3,
+        h: 3,
+        i: "1",
+        widget: "basic-widget",
+        props: { title: "Bom dia" },
+        widget: "BasicWidget2",
+      },
+      {
+        x: 2,
+        y: 2,
+        w: 6,
+        h: 3,
+        i: "2",
+        widget: "basic-widget",
+        props: { title: "Bom dia" },
+        widget: "BasicWidget3",
+      },
     ],
-  }),
-  methods: {
-  }
+  }),  
 };
 </script>
 
-<style scoped>
-.vue-grid-layout {
-  /* background: #eee; */
-}
-
-.container .vue-grid-item.vue-grid-placeholder {
-    background: green ;
-}
-
+<style>
 .vue-grid-item.vue-grid-placeholder {
-    background: green !important;
+  background: #3f51b5;
 }
 
-.vue-grid-item:not(.vue-grid-placeholder) {
-  /* background: #ccc; */
-  /* border: 1px solid black; */
-  
-}
-
-
-.vue-grid-item .resizing {
-  opacity: 0.9;
-}
-.vue-grid-item .static {
-  /* background: #cce; */
-}
-.vue-grid-item .text {
-  font-size: 24px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+.pu-widget {
+  background-color: rgba(255, 255, 255, 0.08);
   height: 100%;
   width: 100%;
 }
-.vue-grid-item .no-drag {
-  height: 100%;
-  width: 100%;
-}
-.vue-grid-item .minMax {
-  font-size: 12px;
-}
-.vue-grid-item .add {
-  cursor: pointer;
-}
-.vue-draggable-handle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 0;
-  left: 0;
-  /* background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='5' cy='5' r='5' fill='#999999'/></svg>") no-repeat; */
-  background-position: bottom right;
-  padding: 0 8px 8px 0;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  box-sizing: border-box;
-  cursor: pointer;
-}
 
+.pu-widget h3 {
+  color: #fff;
+}
+</style>
+
+<style scoped>
 
 
 </style>

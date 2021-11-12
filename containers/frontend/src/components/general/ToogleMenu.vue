@@ -1,4 +1,12 @@
 <template >
+
+<v-navigation-drawer
+      ref="pu-navigation"
+      app
+      clipped
+      dark
+      v-model="toogleMenu"
+  >
   <v-list>    
       
       <v-img      
@@ -87,20 +95,29 @@
           </v-list-group>
         
         </v-list>
-      </v-card>
-    
+      </v-card>    
   </v-list>
+
+</v-navigation-drawer>
 </template>
 
 <script>
+
+import eventbus from '@/eventbus.js'
+
 export default {
+  name: "ToogleMenu",
   data() {
     return {
-      val: true,
+      toogleMenu: false
     };
-  },
+  },  
+  created() {
+    eventbus.onToogleMenu( () => {        
+      const toogle = this.$refs["pu-navigation"].$el.style.transform === 'translateX(-100%)'      
+      this.toogleMenu = toogle
+    })
+  }
 };
 </script>
 
-<style scoped>
-</style>
