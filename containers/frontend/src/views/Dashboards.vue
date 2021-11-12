@@ -27,15 +27,15 @@
 </template>
 
 <script>
-import VueGridLayout from "vue-grid-layout";
+import { GridLayout, GridItem } from "vue-grid-layout";
 import BasicWidget1 from "@/components/widgets/BasicWidget1.vue";
 import BasicWidget2 from "@/components/widgets/BasicWidget2.vue";
 import BasicWidget3 from "@/components/widgets/BasicWidget3.vue";
 
 export default {
   components: {
-    GridLayout: VueGridLayout.GridLayout,
-    GridItem: VueGridLayout.GridItem,
+    GridLayout,
+    GridItem,
     BasicWidget1,
     BasicWidget2,
     BasicWidget3,
