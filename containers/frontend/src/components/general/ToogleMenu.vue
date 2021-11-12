@@ -16,86 +16,10 @@
       max-width="50px"> 
       </v-img>      
     
-      <v-card
-      class="mx-auto"
-      width="300">
-        <v-list dense flat color="indigo--text">
-          
-          <v-list-item to="/">
-            <v-list-item-icon>
-              <v-icon>dashboard_customize</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Dashboards</v-list-item-title>
-          </v-list-item>
-
-          <v-list-group          
-            no-action
-            color="blue-gray--text"
-            prepend-icon="search">
-            
-            <template v-slot:activator >
-              <v-list-item-content>
-                <v-list-item-title>Consultas</v-list-item-title>
-              </v-list-item-content>
-            </template>
-
-            <v-list-item to="/queries/vehicles">
-              <v-list-item-title>Veículos</v-list-item-title>
-              <v-icon>mdi-car-side</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/queries/tests">              
-                <v-list-item-title>Testes</v-list-item-title>
-                <v-icon>mdi-list-status</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/queries/stats" >              
-                <v-list-item-title>Estatísticas</v-list-item-title>
-                <v-icon>bar_chart</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/queries/timers" >              
-                <v-list-item-title>Timers</v-list-item-title>
-                <v-icon>timer</v-icon>
-            </v-list-item>
-
-          </v-list-group>
-
-          <v-list-group
-            no-action
-            color="blue-gray--text"
-            prepend-icon="description">
-            
-            <template v-slot:activator >
-              <v-list-item-content>
-                <v-list-item-title>Relatórios</v-list-item-title>
-              </v-list-item-content>
-            </template>
-
-            <v-list-item to="/reports/vehicles">
-              <v-list-item-title>Veículos</v-list-item-title>
-              <v-icon>mdi-car-side</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/reports/tests">              
-                <v-list-item-title>Testes</v-list-item-title>
-                <v-icon>mdi-list-status</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/reports/stats" >              
-                <v-list-item-title>Estatísticas</v-list-item-title>
-                <v-icon>bar_chart</v-icon>
-            </v-list-item>
-
-            <v-list-item to="/reports/timers" >              
-                <v-list-item-title>Timers</v-list-item-title>
-                <v-icon>timer</v-icon>
-            </v-list-item>
-
-          </v-list-group>
-        
-        </v-list>
-      </v-card>    
+      <v-list dense flat color="indigo--text">
+        <toogle-menu-item v-for="item in menuItens" :key='item.id' :data='item' />         
+      </v-list>
+       
   </v-list>
 
 </v-navigation-drawer>
@@ -104,12 +28,37 @@
 <script>
 
 import eventbus from '@/eventbus.js'
+import ToogleMenuItem from "@/components/general/ToogleMenuItem";
 
 export default {
   name: "ToogleMenu",
+  components:{
+    ToogleMenuItem
+  },
   data() {
     return {
-      toogleMenu: false
+      toogleMenu: true,
+      menuItens: [
+        {
+          type:'item',title:'Dashboards', to:'/', icon:'dashboard_customize',menuItens:[]
+        },
+        {
+          type:'group',title:'Consultas', to:'', icon:'search',menuItens:[
+            {type:'sub-item', title:'Veículos', to:'/queries/vehicles', icon:'mdi-car-side',menuItens:[]},
+            {type:'sub-item', title:'Testes', to:'/queries/tests', icon:'mdi-list-status',menuItens:[]},
+            {type:'sub-item', title:'Estatísticas', to:'/queries/stats', icon:'bar_chart',menuItens:[]},
+            {type:'sub-item', title:'Timers', to:'/queries/timers', icon:'timer',menuItens:[]},
+          ]
+        },
+        {
+          type:'group',title:'Relatórios', to:'', icon:'description',menuItens:[
+            {type:'sub-item', title:'Vehicles', to:'/reports/vehicles', icon:'dashboard_customize',menuItens:[]},
+            {type:'sub-item', title:'Testes', to:'/reports/tests', icon:'mdi-list-status',menuItens:[]},
+            {type:'sub-item', title:'Estatísticas', to:'/reports/stats', icon:'bar_chart',menuItens:[]},
+            {type:'sub-item', title:'Timers', to:'/reports/timers', icon:'timer',menuItens:[]},
+          ]
+        }
+      ]
     };
   },  
   created() {
