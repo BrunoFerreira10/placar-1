@@ -7,8 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@carbon/charts": "^0.51.3",
+    "@carbon/charts-vue": "^0.51.3",
     "@mdi/font": "5.9.55",
     "core-js": "^3.6.5",
+    "d3": "^7.1.1",
     "roboto-fontface": "*",
     "vue": "^2.6.11",
     "vue-grid-layout": "^2.3.12",
