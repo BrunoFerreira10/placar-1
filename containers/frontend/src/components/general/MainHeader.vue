@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app clipped-left dark>
+  <v-app-bar app clipped-left>
     <v-app-bar-nav-icon @click="toogleMenu">
       </v-app-bar-nav-icon>
 

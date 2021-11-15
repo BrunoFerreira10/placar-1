@@ -3,11 +3,11 @@
     ref="pu-navigation"
     app
     clipped
-    dark
     v-model="toogleMenu"
+    
   >
     <v-list>
-      <v-img class="pa-8 ma-auto" src=@/assets/logo.png contain max-width="50px"
+      <v-img class="pa-8 ma-auto" src=@/assets/logo.png contain max-width="60px"
       />
 
       <v-list dense flat color="indigo--text">
@@ -126,3 +126,6 @@ export default {
 };
 </script>
 
+<style scoped>
+  
+</style>
