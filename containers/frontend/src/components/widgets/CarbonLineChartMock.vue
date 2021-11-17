@@ -137,6 +137,7 @@ export default {
           enabled: false,
         },
         curve: "curveMonotoneX",
+        
       },
     };
   },

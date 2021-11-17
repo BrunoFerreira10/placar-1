@@ -58,6 +58,14 @@ export default {
         x: 4, y: 8, w: 3, h: 4, i: "4",
         widget: "CarbonMeterChartMock", props: { valor: 95 },
       },
+      {
+        x: 0, y: 12, w: 4,h: 12,i: "5",
+        widget: "KickstartLineChartMock", props: { },        
+      },
+      {
+        x: 0, y: 12, w: 4,h: 12,i: "6",
+        widget: "KickstartAreaChartMock", props: { },        
+      },
     ],
   }),  
 };
