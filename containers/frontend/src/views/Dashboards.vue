@@ -4,7 +4,7 @@
       id="pu-dashboard-grid"
       :layout.sync="layout"
       :col-num="12"
-      :row-height="50"
+      :row-height="10"
       :is-draggable="true"
       :is-resizable="true"
       :vertical-compact="false"
@@ -20,7 +20,7 @@
         :h="item.h"
         :i="item.i"
       >
-        <component :is="item.widget"></component>
+        <component :is="item.widget" :props="item.props"></component>
       </grid-item>
     </grid-layout>
   </v-container>
@@ -28,49 +28,35 @@
 
 <script>
 import { GridLayout, GridItem } from "vue-grid-layout";
-import BasicWidget1 from "@/components/widgets/BasicWidget1.vue";
-import BasicWidget2 from "@/components/widgets/BasicWidget2.vue";
-import BasicWidget3 from "@/components/widgets/BasicWidget3.vue";
+import Widgets from "@/components/widgets/index.js";
 
 export default {
   components: {
     GridLayout,
     GridItem,
-    BasicWidget1,
-    BasicWidget2,
-    BasicWidget3,
+    ...Widgets
   },
   data: () => ({
     layout: [
       {
-        x: 0,
-        y: 0,
-        w: 2,
-        h: 2,
-        i: "0",
-        widget: "basic-widget",
-        props: { title: "Bom dia" },
-        widget: "BasicWidget1",
+        x: 0, y: 0, w: 4,h: 12,i: "0",
+        widget: "CarbonLineChartMock", props: { },        
       },
       {
-        x: 2,
-        y: 2,
-        w: 3,
-        h: 3,
-        i: "1",
-        widget: "basic-widget",
-        props: { title: "Bom dia" },
-        widget: "BasicWidget2",
+        x: 7, y: 0, w: 2, h: 8, i: "1", 
+        widget: "CarbonGaugeChartMock", props: { },        
       },
       {
-        x: 2,
-        y: 2,
-        w: 6,
-        h: 3,
-        i: "2",
-        widget: "basic-widget",
-        props: { title: "Bom dia" },
-        widget: "BasicWidget3",
+        x: 4, y: 0, w: 3, h: 4, i: "2",
+        widget: "CarbonMeterChartMock", props: { valor: 75 },
+      },      
+      {
+        x: 4, y: 4, w: 3, h: 4, i: "3",
+        widget: "CarbonMeterChartMock", props: { valor: 85 },
+      },      
+      {
+        x: 4, y: 8, w: 3, h: 4, i: "4",
+        widget: "CarbonMeterChartMock", props: { valor: 95 },
       },
     ],
   }),  
@@ -86,6 +72,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.08);
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .pu-widget h3 {
