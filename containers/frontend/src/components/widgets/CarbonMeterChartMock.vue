@@ -50,7 +50,7 @@ export default {
         },        
       },
     };
-  },
+  }
 };
 </script>
 
@@ -60,7 +60,7 @@ export default {
 }
 
 .graph-frame {
-  height: 100%;
+  /* height: 100%; */
 }
 </style>
 
