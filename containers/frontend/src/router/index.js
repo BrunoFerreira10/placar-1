@@ -12,49 +12,49 @@ const routes = [
   },
   {
     path: '/queries/stats',
-    name: ['Stats', 'Stats'],
+    name: ['Queries Stats', 'Stats'],
     title: 'Stats',
     component: () => import('../views/queries/Stats.vue')
   },
   {
     path: '/queries/tests',
-    name: ['Tests', 'Tests'],
+    name: ['Queries Tests', 'Tests'],
     title: 'Tests',
     component: () => import('../views/queries/Tests.vue')
   },
   {
     path: '/queries/timers',
-    name: ['Timers', 'Timers'],
+    name: ['Queries Timers', 'Timers'],
     title: 'Timers',
     component: () => import('../views/queries/Timers.vue')
   },
   {
     path: '/queries/vehicles',
-    name: ['Vehicles', 'Vehicles'],
+    name: ['Queries Vehicles', 'Vehicles'],
     title: 'Vehicles',
     component: () => import('../views/queries/Vehicles.vue')
   },
   {
     path: '/reports/stats',
-    name: ['Stats', 'Stats'],
+    name: ['Reports Stats', 'Stats'],
     title: 'Stats',
     component: () => import('../views/reports/Stats.vue')
   },
   {
     path: '/reports/tests',
-    name: ['Tests', 'Tests'],
+    name: ['Reports Tests', 'Tests'],
     title: 'Tests',
     component: () => import('../views/reports/Tests.vue')
   },
   {
     path: '/reports/timers',
-    name: ['Timers', 'Timers'],
+    name: ['Reports Timers', 'Timers'],
     title: 'Timers',
     component: () => import('../views/reports/Timers.vue')
   },
   {
     path: '/reports/vehicles',
-    name: ['Vehicles', 'Vehicles'],
+    name: ['Reports Vehicles', 'Vehicles'],
     title: 'Vehicles',
     component: () => import('../views/reports/Vehicles.vue')
   }

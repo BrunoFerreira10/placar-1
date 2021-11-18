@@ -33,8 +33,7 @@ export default {
 .pu-view {
   height: 100%;
   width: 100%;
-  max-width: 100% !important;
-  background-color: #121212;  
+  max-width: 100% !important;  
 }
 
 </style>
